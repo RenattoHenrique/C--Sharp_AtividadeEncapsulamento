@@ -6,6 +6,20 @@ namespace Encapsulamento
     {
         static void Main(string[] args)
         {
+            TimeSpan time = new TimeSpan(0, 0, 05);
+            while (true)
+            {
+                Thread.Sleep(1000);
+                time = time - TimeSpan.FromSeconds(1);
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Contagem Regressiva: " + time.ToString(@"hh\:mm\:ss"));
+                Console.ForegroundColor = ConsoleColor.Gray;
+                if (time.TotalSeconds == 0) break;
+
+            }
+            Console.Clear();
+
             Pessoa pessoa = new Pessoa();
 
             Console.BackgroundColor = ConsoleColor.White;
